@@ -33,6 +33,9 @@ urlpatterns = [
     # path('doctor/',include('doctor.urls', namespace="doctor")),
     path('api/auth/token/', obtain_jwt_token),
     path('api/users/', include(("users.api.urls",'users-api'), namespace='users-api')),
+    path('api/doctors/', include(("doctor.api.urls",'doctor-api'), namespace='doctor-api')),
+    path('api/nurses/', include(("nurse.api.urls",'nurse-api'), namespace='nurse-api')),
+    path('api/patients/', include(("patient.api.urls",'patient-api'), namespace='patient-api')),
 ]
 
 if settings.DEBUG:

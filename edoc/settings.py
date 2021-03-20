@@ -150,6 +150,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL  = '/media/'
 
+# #production mode starts here
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = STATIC_DIR
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL  = '/media/'
+# #production mode ends here
+
 AUTH_USER_MODEL = 'users.User'
 
 LOGIN_REDIRECT_URL ='/dash/'

@@ -16,6 +16,7 @@ class User(AbstractUser):
     is_patient          = models.BooleanField(default=False)
     gender              = models.CharField(max_length=200, blank=False, null=False,choices=GENDER_CHOICES)
     address             = models.TextField(blank=False, null=False)
+    city                = models.TextField(blank=False, null=False)
     dob                 = models.DateField(null=True, blank=True)
     email               = models.EmailField(unique=True, blank=False)
     phone_regex         = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
