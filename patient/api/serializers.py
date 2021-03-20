@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 #Creating a PatientProfile
-class PatientProfileCreateUpdateSerializer(ModelSerializer):
+class PatientCreateUpdateSerializer(ModelSerializer):
     patient    = models.ForeignKey(User, default=1, on_delete = models.CASCADE)
     class Meta:
         model = PatientProfile
@@ -34,7 +34,7 @@ patient_detail_url = HyperlinkedIdentityField(
     )
 
 # PatientProfile Details
-class PatientProfileDetailSerializer(ModelSerializer):
+class PatientDetailSerializer(ModelSerializer):
     url         = patient_detail_url
     patient      = UserDetailSerializer(read_only=True)
     delete_url  = HyperlinkedIdentityField(
@@ -62,7 +62,7 @@ class PatientProfileDetailSerializer(ModelSerializer):
         ]
     
 # All PatientProfiles List
-class PatientProfileListSerializer(ModelSerializer):
+class PatientListSerializer(ModelSerializer):
     url         = patient_detail_url
     patient      = UserDetailSerializer(read_only=True)
     delete_url  = HyperlinkedIdentityField(

@@ -24,8 +24,8 @@ admin.site.site_title = "E-Doctor System"
 admin.site.index_title = 'E-Doctor Site Administration'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('users.urls')),
+    path('', admin.site.urls),
+    # path('', include('users.urls')),
     # path('visitor/',include('visitor.urls', namespace="visitor")),
     path('users/', include('django.contrib.auth.urls')),
     # path('patient/',include('patient.urls', namespace="patient")),
