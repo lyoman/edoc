@@ -10,7 +10,7 @@ from users.models import User
 # )
 # Create your models here.
 class PatientProfile(models.Model):
-    doctor         = models.ForeignKey(User, default=1, on_delete = models.CASCADE)
+    patient         = models.ForeignKey(User, default=1, on_delete = models.CASCADE)
     role           = models.CharField(max_length=200, blank=False, null=False)
     years          = models.CharField(max_length=200, blank=True, null=True)
     qualification1 = models.CharField(max_length=200, blank=True, null=True)
