@@ -3,11 +3,11 @@ from .models import PatientProfile
 
 # Register your models here.
 class PatientProfileModelAdmin(admin.ModelAdmin):
-    list_display 	    = ["id", "patient", "role", "years", "qualification1", "rating", 'description', "latitude", "longitude", "updated", "timestamp"]
-    list_display_links  = ["updated", "role"]
+    list_display 	    = ["id", "patient", 'location', "latitude", "longitude", "updated", "timestamp"]
+    list_display_links  = ["updated", "timestamp"]
     list_editable		= ["latitude", "longitude"]
-    list_filter			= ["patient", "updated", "timestamp", "years", "rating"]
-    search_fields		= ["description", "role", "years", "rating"]
+    list_filter			= ["patient", "updated", "timestamp", "location"]
+    search_fields		= ["location", "user__username"]
     class Meta:
         model = PatientProfile
   

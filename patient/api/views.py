@@ -73,7 +73,7 @@ class PatientDetailAPIView(RetrieveAPIView):
 class PatientListAPIView(ListAPIView):
     serializer_class = PatientListSerializer
     filter_backends = [SearchFilter, OrderingFilter]
-    search_fields = ['role', 'years', 'rating', "qualification1", "qualification2", "qualification3", "description"]
+    search_fields = ["location"]
     permission_classes = [AllowAny]
 
     def get_queryset(self):
